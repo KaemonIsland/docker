@@ -1,0 +1,16 @@
+# Specifies docker compose version
+version: '3'
+
+# Each service is a type of "container"
+services:
+  # Container name
+  redis-server:
+    image: 'redis'
+  # Container name
+  node-app:
+    # Points to local dockerfile
+    build: .
+    restart: always
+    # Exposes ports
+    ports:
+      - '8080:8080'
